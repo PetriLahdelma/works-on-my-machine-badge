@@ -34,5 +34,8 @@
   "homepage": "https://github.com/PetriLahdelma/works-on-my-machine-badge#readme",
   "bugs": {
     "url": "https://github.com/PetriLahdelma/works-on-my-machine-badge/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30"
   }
 }
