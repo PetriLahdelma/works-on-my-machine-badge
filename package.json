@@ -1,0 +1,38 @@
+{
+  "name": "works-on-my-machine-badge",
+  "version": "0.1.0",
+  "description": "GitHub Action that updates a repo badge JSON based on real CI results.",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "action.yml",
+    "badge/status.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "docs"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node dist/index.js",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node test/lib.test.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PetriLahdelma/works-on-my-machine-badge.git"
+  },
+  "homepage": "https://github.com/PetriLahdelma/works-on-my-machine-badge#readme",
+  "bugs": {
+    "url": "https://github.com/PetriLahdelma/works-on-my-machine-badge/issues"
+  }
+}
