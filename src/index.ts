@@ -8,7 +8,8 @@ async function run() {
   const label = core.getInput("label") || "works on my machine";
   const message = core.getInput("message") || "apparently";
   const color = core.getInput("color") || "green";
-  const commentOnPr = (core.getInput("comment-on-pr") || "false") === "true";
+  const commentRaw = (core.getInput("comment-on-pr") || "false").toLowerCase();
+  const commentOnPr = commentRaw === "true" || commentRaw === "1" || commentRaw === "yes";
   const commitMessage = core.getInput("commit-message") || "chore: update badge status";
 
   const token = core.getInput("github-token") || process.env.GITHUB_TOKEN;
@@ -16,7 +17,13 @@ async function run() {
 
   const octokit = github.getOctokit(token);
   const { owner, repo } = github.context.repo;
-  const state = normalizeState(stateInput);
+  const normalized = normalizeState(stateInput);
+  if (!normalized.recognized) {
+    throw new Error(
+      `Unsupported state "${stateInput}". Expected success|failure|cancelled|skipped|neutral|pass|fail.`
+    );
+  }
+  const state = normalized.state;
 
   const payload = {
     schemaVersion: 1,

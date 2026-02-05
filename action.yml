@@ -2,7 +2,7 @@ name: works-on-my-machine-badge
 description: Update a repo-based badge JSON to reflect CI status
 inputs:
   state:
-    description: success | failure | neutral
+    description: success | failure | cancelled | skipped | neutral | pass | fail
     required: true
   status-file:
     description: Path to badge JSON in the repo
