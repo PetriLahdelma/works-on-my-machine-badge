@@ -1,0 +1,16 @@
+name: badge
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  badge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: PetriLahdelma/works-on-my-machine-badge@v0
+        with:
+          state: ${{ github.event.workflow_run.conclusion }}

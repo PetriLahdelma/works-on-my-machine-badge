@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "label": "works on my machine",
+  "message": "apparently",
+  "color": "green",
+  "state": "pass",
+  "updated": "2025-01-10T12:00:00.000Z",
+  "runId": 1234567890,
+  "runUrl": "https://github.com/OWNER/REPO/actions/runs/1234567890"
+}
