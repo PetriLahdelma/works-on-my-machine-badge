@@ -1,37 +1,17 @@
+<picture>
+  <source srcset="branding/hero.svg" type="image/svg+xml">
+  <img alt="works-on-my-machine-badge hero" src="branding/hero.png" width="100%">
+</picture>
+
 # works-on-my-machine-badge
-A badge that reports the truth from CI.
-
-- Updates a repo-based `badge/status.json` to reflect CI status.
-- Repo-only badge with no external services required.
-- Optional PR comments plus configurable label, message, and color.
-
-**Copy/paste**
-```yaml
-- uses: PetriLahdelma/works-on-my-machine-badge@v0
-  with:
-    state: ${{ job.status }}
-```
-
-**Demo**
-Record a CI run and show the badge URL updating.
-
-**Trust & safety**
-This action commits a status file to your repo using `GITHUB_TOKEN`. Review workflow permissions and the target path.
-
-Star if this saves you time.  
-→ Buzz Kit: /buzz-kit
+A badge that reports the truth from CI. Repo-only badges that update from real CI results.
 
 ![CI](https://github.com/PetriLahdelma/works-on-my-machine-badge/actions/workflows/ci.yml/badge.svg) ![Release](https://img.shields.io/github/v/release/PetriLahdelma/works-on-my-machine-badge) ![License](https://img.shields.io/github/license/PetriLahdelma/works-on-my-machine-badge) ![Stars](https://img.shields.io/github/stars/PetriLahdelma/works-on-my-machine-badge)
 
-![Hero](assets/hero.png?20260205)
-
-## Requirements
-
-- Node.js 20+ (GitHub Actions `node20`)
-- `contents: write` permission to update `badge/status.json`
+> [!IMPORTANT]
+> This action commits to your repo using `GITHUB_TOKEN`. Review workflow permissions before enabling on forks.
 
 ## Quickstart
-
 ```yaml
 - name: Update badge status
   permissions:
@@ -40,6 +20,24 @@ Star if this saves you time.
   with:
     state: ${{ job.status }}
 ```
+
+## Demo
+![Terminal Demo](branding/screenshots/terminal-demo.svg)
+
+```text
+https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/OWNER/REPO/main/badge/status.json
+```
+
+## Docs
+Start here: [Requirements](#requirements) · [Inputs](#inputs) · [Output](#output) · [Permissions](#permissions) · [Example Workflow](#example-workflow) · [Badge URL](#badge-url) · [Troubleshooting](#troubleshooting)
+
+## Contributing
+See `CONTRIBUTING.md`.
+
+## Requirements
+
+- Node.js 20+ (GitHub Actions `node20`)
+- `contents: write` permission to update `badge/status.json`
 
 ## Inputs
 
@@ -107,12 +105,6 @@ https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/OWNER/REPO
 
 - Action fails the job if inputs are invalid or GitHub API calls fail.
 
-## Demo
-
-```text
-https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PetriLahdelma/works-on-my-machine-badge/main/badge/status.json
-```
-
 ## Why This Exists
 
 Badges should reflect reality. This uses CI to update status.json.
@@ -122,10 +114,7 @@ Badges should reflect reality. This uses CI to update status.json.
 - **Is it repo-only?** Yes, no external services.
 - **Does it comment on PRs?** Optional.
 
-## Contributing
-
-See `CONTRIBUTING.md` for local development.
-
 ## License
 
 MIT
+
