@@ -81,7 +81,7 @@ The action does not auto-pick colors; pass `color` or map it in your workflow.
 Parallel jobs writing the same `status-file` will overwrite each other. Use per-workflow files or a finalizer job.
 
 ## Demo
-![Terminal Demo](branding/screenshots/terminal-demo.svg)
+![Demo](branding/demos/demo.gif)
 
 ```text
 https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/OWNER/REPO/main/badge/status.json
