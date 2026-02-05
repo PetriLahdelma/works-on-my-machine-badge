@@ -8,6 +8,12 @@ export default {
   callout: "This action commits to your repo using `GITHUB_TOKEN`. Review workflow permissions before enabling on forks.",
   quickstart: "uses: PetriLahdelma/works-on-my-machine-badge@v0",
   hero: { width: 1600, height: 900 },
+  heroTitleLines: ["works-on-my","machine-badge"],
+  heroTitleSize: 68,
+  heroTitleLineHeight: 72,
+  socialTitleLines: ["works-on-my","machine-badge"],
+  socialTitleSize: 54,
+  socialTitleLineHeight: 58,
   icon: {
     inner: `
 <rect x="112" y="176" width="288" height="160" rx="80" stroke="{{accent}}" stroke-width="{{stroke}}"/>
