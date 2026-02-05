@@ -3,7 +3,7 @@
   <img alt="works-on-my-machine-badge hero" src="branding/hero.png" width="100%">
 </picture>
 
-# works-on-my-machine-badge
+# Works on My Machine -Badge
 A badge that reports the truth from CI. Repo-only badges that update from real CI results.
 
 ![CI](https://github.com/PetriLahdelma/works-on-my-machine-badge/actions/workflows/ci.yml/badge.svg) ![Release](https://img.shields.io/github/v/release/PetriLahdelma/works-on-my-machine-badge) ![License](https://img.shields.io/github/license/PetriLahdelma/works-on-my-machine-badge) ![Stars](https://img.shields.io/github/stars/PetriLahdelma/works-on-my-machine-badge)
