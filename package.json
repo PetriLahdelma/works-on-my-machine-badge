@@ -32,7 +32,7 @@
     "brand:demo": "node scripts/brand-demo.mjs"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "@actions/core": "^3.0.0",
     "@actions/github": "^6.0.0"
   },
   "engines": {
