@@ -1,6 +1,6 @@
 {
   "name": "works-on-my-machine-badge",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "GitHub Action that updates a repo badge JSON based on real CI results.",
   "keywords": [
     "github-action",
