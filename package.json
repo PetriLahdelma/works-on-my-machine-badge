@@ -2,6 +2,13 @@
   "name": "works-on-my-machine-badge",
   "version": "0.1.1",
   "description": "GitHub Action that updates a repo badge JSON based on real CI results.",
+  "keywords": [
+    "github-action",
+    "badge",
+    "ci",
+    "devops",
+    "automation"
+  ],
   "type": "module",
   "main": "dist/index.js",
   "files": [

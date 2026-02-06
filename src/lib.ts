@@ -13,3 +13,9 @@ export function normalizeState(
   if (NEUTRAL.has(s)) return { state: "neutral", recognized: true };
   return { state: "neutral", recognized: false };
 }
+
+export function defaultColorForState(state: NormalizedState): string {
+  if (state === "pass") return "green";
+  if (state === "fail") return "red";
+  return "lightgrey";
+}

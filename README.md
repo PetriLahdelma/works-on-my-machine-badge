@@ -69,13 +69,13 @@ permissions:
 See `docs/fork-prs.md` for fork-safe patterns.
 
 ## Status Mapping
-| Input | Normalized state | Suggested color |
+| Input | Normalized state | Default color |
 | --- | --- | --- |
 | `success`, `pass` | `pass` | `green` |
 | `failure`, `fail`, `error`, `timed_out`, `timed-out` | `fail` | `red` |
 | `neutral`, `cancelled`, `canceled`, `skipped` | `neutral` | `lightgrey` |
 
-The action does not auto-pick colors; pass `color` or map it in your workflow.
+The action now auto-picks colors by normalized state unless you pass `color` explicitly.
 
 ## Race Conditions
 Parallel jobs writing the same `status-file` will overwrite each other. Use per-workflow files or a finalizer job.
