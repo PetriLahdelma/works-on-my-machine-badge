@@ -1,13 +1,13 @@
 import core from "@actions/core";
 import github from "@actions/github";
-import { normalizeState } from "./lib.js";
+import { defaultColorForState, normalizeState } from "./lib.js";
 
 async function run() {
   const stateInput = core.getInput("state");
   const statusFile = core.getInput("status-file") || "badge/status.json";
   const label = core.getInput("label") || "works on my machine";
   const message = core.getInput("message") || "apparently";
-  const color = core.getInput("color") || "green";
+  const colorInput = core.getInput("color").trim();
   const commentRaw = (core.getInput("comment-on-pr") || "false").toLowerCase();
   const commentOnPr = commentRaw === "true" || commentRaw === "1" || commentRaw === "yes";
   const commitMessage = core.getInput("commit-message") || "chore: update badge status";
@@ -24,6 +24,7 @@ async function run() {
     );
   }
   const state = normalized.state;
+  const color = colorInput || defaultColorForState(state);
 
   const payload = {
     schemaVersion: 1,

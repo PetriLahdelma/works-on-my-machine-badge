@@ -11,4 +11,11 @@ export function normalizeState(state) {
         return { state: "neutral", recognized: true };
     return { state: "neutral", recognized: false };
 }
+export function defaultColorForState(state) {
+    if (state === "pass")
+        return "green";
+    if (state === "fail")
+        return "red";
+    return "lightgrey";
+}
 //# sourceMappingURL=lib.js.map

@@ -19,7 +19,6 @@ inputs:
   color:
     description: Badge color
     required: false
-    default: green
   comment-on-pr:
     description: Comment on PR with the result
     required: false
