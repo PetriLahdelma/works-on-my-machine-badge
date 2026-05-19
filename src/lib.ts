@@ -7,7 +7,7 @@ const NEUTRAL = new Set(["neutral", "cancelled", "canceled", "skipped"]);
 export function normalizeState(
   state: string
 ): { state: NormalizedState; recognized: boolean } {
-  const s = (state || "").toLowerCase();
+  const s = (state || "").trim().toLowerCase();
   if (PASS.has(s)) return { state: "pass", recognized: true };
   if (FAIL.has(s)) return { state: "fail", recognized: true };
   if (NEUTRAL.has(s)) return { state: "neutral", recognized: true };
@@ -18,4 +18,21 @@ export function defaultColorForState(state: NormalizedState): string {
   if (state === "pass") return "green";
   if (state === "fail") return "red";
   return "lightgrey";
+}
+
+export function normalizeStatusFilePath(input: string): string {
+  const normalized = (input || "badge/status.json").trim().replace(/\\/g, "/");
+  const parts = normalized.split("/").filter(Boolean);
+
+  if (
+    normalized === "" ||
+    normalized.startsWith("/") ||
+    normalized.includes("\0") ||
+    parts.includes(".") ||
+    parts.includes("..")
+  ) {
+    throw new Error("status-file must be a relative repository path without . or .. segments.");
+  }
+
+  return parts.join("/");
 }
