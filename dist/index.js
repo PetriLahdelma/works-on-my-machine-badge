@@ -1,9 +1,9 @@
-import core from "@actions/core";
-import github from "@actions/github";
-import { defaultColorForState, normalizeState } from "./lib.js";
+import * as core from "@actions/core";
+import * as github from "@actions/github";
+import { defaultColorForState, normalizeState, normalizeStatusFilePath } from "./lib.js";
 async function run() {
     const stateInput = core.getInput("state");
-    const statusFile = core.getInput("status-file") || "badge/status.json";
+    const statusFile = normalizeStatusFilePath(core.getInput("status-file"));
     const label = core.getInput("label") || "works on my machine";
     const message = core.getInput("message") || "apparently";
     const colorInput = core.getInput("color").trim();

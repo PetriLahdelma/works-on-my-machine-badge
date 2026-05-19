@@ -4,3 +4,4 @@ export declare function normalizeState(state: string): {
     recognized: boolean;
 };
 export declare function defaultColorForState(state: NormalizedState): string;
+export declare function normalizeStatusFilePath(input: string): string;
